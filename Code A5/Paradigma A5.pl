@@ -3,6 +3,7 @@ caracteristicaRosto(_).
 olhos(_).
 orelha(_).
 pelo(_).
+patas(_).
 fucinho(_).
 corpo(_).
 cor_do_pelo(_).
@@ -29,7 +30,7 @@ cachorro(collie) :- familia(pastores), tamanho(medio), fucinho(arredondado), olh
 
 cachorro(pastor_alemao) :- familia(pastores), tamanho(grande), corpo(elegante), fucinho(alongado), fucinho(arredondado), olhos(preto), orelha(eretas), cor_do_pelo(preto), cor_do_pelo(cinza), cor_do_pelo(caramelo), climaPreferivel(ameno), rabo(longo), caracteristica(territorialista), caracteristica(inteligente), pais(alemanha).
 
-cachorro(pitbull_americano) :- familia(terrirs), tamanho(pequeno), corpo(forte), fucinho(pequeno), olhos(preto), olhos(pequeno), cor_do_pelo(caramelo), cor_do_pelo(branco), cor_do_pelo(preto), climaPreferivel(ameno), rabo(longo), caracteristica(veloz), caracteristica(fiel), caracteristica(inteligente), caracteristica(docil), caracteristica(territorialista), pais(eua).
+cachorro(pitbull_americano) :- familia(terrirs), tamanho(pequeno), corpo(forte), fucinho(pequeno), olhos(preto), olhos(pequeno), cor_do_pelo(caramelo), cor_do_pelo(branco), cor_do_pelo(preto), climaPreferivel(ameno), rabo(longo), caracteristica(veloz), caracteristica(fiel), caracteristica(inteligente), caracteristica(docil), caracteristica(territorialista), pais(inglaterra).
 
 cachorro(yorkshire) :- familia(terrirs), tamanho(pequeno), corpo(fragil), olhos(preto), orelha(eretas), cor_do_pelo(caramelo), cor_do_pelo(preto), climaPreferivel(calor), rabo(pequeno), caracteristica(timido), caracteristica(territorialista), pais(inglaterra).
 
@@ -55,4 +56,12 @@ familia(toys) :- caracteristica(companheiro), caracteristica(fiel), corpo(pequen
 
 familia(nao_esportista) :- caracteristica(companheiro), corpo(robusto), olhos(grande), orelha(erata), rabo(pequeno),  caracteristica(amigavel), caracteristica(territorialista), caracteristica(protetor).
 
-pais() :- 
+pais(argentina) :- provincia(cordoba).
+pais(canada) :- provincia(terra_nova).
+pais(brasil) :- estado(sao_paulo).
+pais(alemanha) :- cidade(hamburgo), cidade(suabia), cidade(berlim).
+pais(japao) :- ilha(honshow).
+pais(inglaterra) :- cidade(londres), cidade(oxonia), condado(yorkshire).
+pais(fraca) :- provincia(gasconha).
+pais(escocia) :- fronteira(anglo-escocesa).
+pais(china) :- provincia(yunnan).

@@ -1,0 +1,15 @@
+Tema: Esporte
+
+tipo de contato
+com Contato
+sem Contato
+semi
+
+
+lugar de Origem
+
+classificação
+
+Continentes
+
+Lugar que se pratica

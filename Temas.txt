@@ -1,15 +1,22 @@
-Tema: Esporte
+### Tema: Esporte
 
-tipo de contato
-com Contato
-sem Contato
-semi
+***Tipo de contato***
+- [ ] Contato completo
+*Caracteristicas*
+- [ ] Sem Contato
+*Caracteristicas*
+- [ ] Semi-Contato
+*Caracteristicas***
+- [ ] Contato limitado
+---
+***Lugar de Origem***
+- [ ] Continente
+---
+***Classificação***
+- [ ] Nivel de Hierarquia
+---
+***Lugar que se pratica***
+***Itens usados***
+***Quantidade de jogadores***
+***Caracteristicas do esporte***
 
-
-lugar de Origem
-
-classificação
-
-Continentes
-
-Lugar que se pratica

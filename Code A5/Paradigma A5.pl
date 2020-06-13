@@ -8,7 +8,7 @@ pelo(_).
 cor_do_pelo(_).
 corpo(_).
 tamanho(_).
-nacionalidade(_).
+continente(_).
 
 familia(_).
 
@@ -24,7 +24,7 @@ cachorro(dogo) :-
     cor_do_pelo(branco),
     corpo(robusto),
     tamanho(grande),
-    nacionalidade(argentina).
+    pais(argentina).
 
 cachorro(dogue) :-
     familia(trabalhadores),
@@ -38,7 +38,7 @@ cachorro(dogue) :-
     pelagem(dogue),
     corpo(robusto),
     tamanho(grande),
-    nacionalidade(alemanha).
+    pais(alemanha).
  
 
 caracteristicas(dogo) :- caracteristica(X), member(X, [afetuoso, fiel, protetor, alegre, amigavel, tolerante]), !.
@@ -48,6 +48,9 @@ proficiencia(dogo) :- trabalho(X), member(X, [guarda, cacador, guia]), !.
 proficiencia(dogue) :- trabalho(X), member(X, [guarda, cacador]), !.
 
 pelagem(dogue) :- cor_do_pelo(X), member(X, [preto, tigrado, castanho, azul, manto, arlequim]), !.
+
+pais(alemanha) :- continente(europeu).
+pais(argentina) :- continente(sul_americano).
 
 linhagem_sanguinea(cachorro(dogo)) :- 
     cachorro(dogue),

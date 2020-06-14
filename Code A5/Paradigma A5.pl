@@ -13,7 +13,7 @@ tamanho(_).
 altura_media_cm(_).
 peso_medio_kg(_).
 
-%---------------------------------------------Machos-----------------------------------------------
+% Cachorros
 
 cachorro(dogo) :-
     proficiencias(dogo),
@@ -121,7 +121,7 @@ cachorro(bull_terrier) :-
     regiao_origem(birminghan),
     linhagem_genetica(bull_terrier, _).
 
-%--------------------------------------------------Caracteristicas-----------------------------------
+% Caracteristicas
 
 caracteristicas(dogo) :- caracteristica(X),
     member(X, [afetuoso, protetor, fiel, alegre, amigavel, tolerante]), !.
@@ -136,7 +136,7 @@ caracteristicas(bulldog) :- caracteristica(X),
 caracteristicas(bull_terrier) :- caracteristica(X),
     member(X, [protetor, ativo, afiado, treinavel]), !.
 
-%--------------------------------------------------proficiencias----------------------------------------
+% Proficiencias
 
 proficiencias(dogo) :- proficiencia(X),
     member(X, [guarda, caçador, guia, policial, resgate, schutzhund]), !.
@@ -153,7 +153,7 @@ proficiencias(bulldog) :- proficiencia(X),
 proficiencias(bull_terrier) :- proficiencia(X),
     member(X, [guarda, caçador]), !.
 
-%-----------------------------------------------Cor do Pelo-----------------------------------------
+% Cor do Pelo
 
 pelo(dogue_alemao) :- cor_do_pelo(X),
     member(X, [preto, tigrado, castanho, azul, manto, arlequim]), !.
@@ -168,7 +168,7 @@ pelo(bulldog) :- cor_do_pelo(X),
 pelo(bull_terrier) :- cor_do_pelo(X),
     member(X, [branco, preto, marron]), !.
 
-%-----------------------------------------------Continente----------------------------------------
+% Localização
 
 regiao_origem(cordoba):- continente(sul_americano), pais_de_origem(argentina).
 regiao_origem(hamburgo):- continente(europeu), pais_de_origem(alemanha).
@@ -177,9 +177,8 @@ regiao_origem(dublin):- continente(europeu), pais_de_origem(irlanda).
 regiao_origem(nottingham):- continente(europeu), pais_de_origem(inglaterra).
 regiao_origem(birminghan):- continente(europeu), pais_de_origem(inglaterra).
 
-%-----------------------------------------------Linhagem sanguinea----------------------------------
+% Linhagem sanguinea
 
-% O dogo ainda tem muito mais cachorros em sua linhagem porém ficaria muito grande e não saudavel
 linhagem_genetica(dogo, X):- ancestral(X),
     member(X, [lutador_de_cordoba, dogue_alemao, boxer, mastim_espanhol, bulldog, bull_terrier, irish_wolfhound, mastim_dos_pirineus, dogue_de_bordeaux]), !.
 linhagem_genetica(dogue_alemao, X):- ancestral(X),
@@ -194,5 +193,3 @@ linhagem_genetica(bulldog, X):- ancestral(X),
     member(X, [alao]), !.
 linhagem_genetica(bull_terrier, X):- ancestral(X),
     member(X, [bulldog, english_white_terrier]), !.
-
-

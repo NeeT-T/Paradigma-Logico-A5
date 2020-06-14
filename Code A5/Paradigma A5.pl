@@ -11,7 +11,6 @@ tamanho(_).
 altura_media_maxima_cm(_).
 peso_medio_maximo_kg(_).
 
-
 %---------------------------------------------Machos-----------------------------------------------
 
 cachorro(dogo) :-
@@ -23,7 +22,7 @@ cachorro(dogo) :-
     cor_dos_olhos(preto),
     pelagem(curto),
     cor_do_pelo(branco),
-    corpo(robusto),
+    corpo(bam_bam),
     tamanho(grande),
     altura_media_maxima_cm('68'),
     peso_medio_maximo_kg('45').
@@ -36,7 +35,7 @@ cachorro(dogue_alemao) :-
     cor_dos_olhos(preto),
     pelagem(curto),
     pelo(dogue_alemao),
-    corpo(robusto),
+    corpo(giga_big),
     tamanho(grande),
     altura_media_maxima_cm('79'),
     peso_medio_maximo_kg('82'),
@@ -50,7 +49,7 @@ cachorro(lutador_de_cordoba) :-
     cor_dos_olhos(preto),
     pelagem(curto),
     pelo(lutador_de_cordoba),
-    corpo(robusto),
+    corpo(leo_estronda),
     tamanho(grande),
     altura_media_maxima_cm('61'),
     peso_medio_maximo_kg('36'),
@@ -76,9 +75,9 @@ cachorro(irish_wolfhound) :-
     caracteristicas(irish_wolfhound),
     caracteristicas_corporal_incomum(_),
     cor_dos_olhos(preto),
-    pelagem(curto),
+    pelagem(media),
     pelo(irish_wolfhound),
-    corpo(robusto),
+    corpo(tony_ramus_bugley),
     tamanho(grande),
     altura_media_maxima_cm('203'),
     peso_medio_maximo_kg('82'),
@@ -92,7 +91,7 @@ cachorro(buldogue) :-
     cor_dos_olhos(preto),
     pelagem(curto),
     pelo(buldogue),
-    corpo(robusto),
+    corpo(igual_o_pug),
     tamanho(medio),
     altura_media_maxima_cm('40'),
     peso_medio_maximo_kg('25'),
@@ -107,7 +106,7 @@ cachorro(bull_terrier) :-
     cor_dos_olhos(preto),
     pelagem(curto),
     pelo(bull_terrier),
-    corpo(robusto),
+    corpo(mirrado),
     tamanho(medio),
     altura_media_maxima_cm('55'),
     peso_medio_maximo_kg('29'),
@@ -131,7 +130,7 @@ caracteristicas(buldogue) :- caracteristica(X),
 caracteristicas(bull_terrier) :- caracteristica(X),
     member(X, [protetor, ativo, afiado, treinavel]), !.
 
-%--------------------------------------------------Trabalho----------------------------------------
+%--------------------------------------------------proficiencias----------------------------------------
 
 proficiencias(dogo) :- proficiencia(X),
     member(X, [guarda, caçador, guia, policial, resgate, schutzhund]), !.

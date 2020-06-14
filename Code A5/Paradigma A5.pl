@@ -183,7 +183,7 @@ regiao_origem(birminghan):- continente(europeu), pais_de_origem(inglaterra).
 linhagem_genetica(dogo, X):- ancestral(X),
     member(X, [lutador_de_cordoba, dogue_alemao, boxer, mastim_espanhol, bulldog, bull_terrier, irish_wolfhound, mastim_dos_pirineus, dogue_de_bordeaux]), !.
 linhagem_genetica(dogue_alemao, X):- ancestral(X),
-    member(X, [mastim_ingles, galgo]), !.
+    member(X, [buldogue_alemao, mastim_ingles, galgo]), !.
 linhagem_genetica(lutador_de_cordoba, X):- ancestral(X),
     member(X, [mastin, bull_terrier, boxer, bulldog]), !.
 linhagem_genetica(boxer, X):- ancestral(X),

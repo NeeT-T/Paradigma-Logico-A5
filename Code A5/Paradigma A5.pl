@@ -3,14 +3,15 @@ proficiencia(_).
 expectativa_maxima_de_anos_de_vida(_).
 caracteristicas_corporal_incomum(_).
 cor_dos_olhos(_).
+ancestral(_).
 continente(_).
 pais_de_origem(_).
 pelagem(_).
 cor_do_pelo(_).
 corpo(_).
 tamanho(_).
-altura_media_maxima_cm(_).
-peso_medio_maximo_kg(_).
+altura_media_cm(_).
+peso_medio_kg(_).
 
 %---------------------------------------------Machos-----------------------------------------------
 
@@ -25,8 +26,9 @@ cachorro(dogo) :-
     cor_do_pelo(branco),
     corpo(bam_bam),
     tamanho(grande),
-    altura_media_maxima_cm('68'),
-    peso_medio_maximo_kg('45').
+    altura_media_cm('68'),
+    peso_medio_kg('45'),
+    linhagem_genetica(dogo, _).
 
 cachorro(dogue_alemao) :-
     proficiencias(dogue_alemao),
@@ -38,9 +40,10 @@ cachorro(dogue_alemao) :-
     pelo(dogue_alemao),
     corpo(giga_big),
     tamanho(grande),
-    altura_media_maxima_cm('79'),
-    peso_medio_maximo_kg('82'),
-    regiao_origem(hamburgo).
+    altura_media_cm('79'),
+    peso_medio_kg('82'),
+    regiao_origem(hamburgo),
+    linhagem_genetica(dogue_alemao, _).
 
 cachorro(lutador_de_cordoba) :-
     proficiencias(lutador_de_cordoba),
@@ -52,9 +55,10 @@ cachorro(lutador_de_cordoba) :-
     pelo(lutador_de_cordoba),
     corpo(leo_estronda),
     tamanho(grande),
-    altura_media_maxima_cm('61'),
-    peso_medio_maximo_kg('36'),
-    regiao_origem(cordoba).
+    altura_media_cm('61'),
+    peso_medio_kg('36'),
+    regiao_origem(cordoba),
+    linhagem_genetica(lutador_de_cordoba, _).
 
 cachorro(boxer) :-
     proficiencias(boxer),
@@ -66,9 +70,10 @@ cachorro(boxer) :-
     pelo(boxer),
     corpo(robusto),
     tamanho(grande),
-    altura_media_maxima_cm('62'),
-    peso_medio_maximo_kg('35'),
-    regiao_origem(munique).
+    altura_media_cm('62'),
+    peso_medio_kg('35'),
+    regiao_origem(munique),
+    linhagem_genetica(boxer, _).
 
 cachorro(irish_wolfhound) :-
     proficiencias(irish_wolfhound),
@@ -80,9 +85,10 @@ cachorro(irish_wolfhound) :-
     pelo(irish_wolfhound),
     corpo(tony_ramus_bugley),
     tamanho(grande),
-    altura_media_maxima_cm('203'),
-    peso_medio_maximo_kg('82'),
-    regiao_origem(dublin).
+    altura_media_cm('203'),
+    peso_medio_kg('82'),
+    regiao_origem(dublin),
+    linhagem_genetica(irish_wolfhound, _).
 
 cachorro(bulldog) :-
     proficiencia(caçador),
@@ -94,9 +100,10 @@ cachorro(bulldog) :-
     pelo(bulldog),
     corpo(igual_o_pug),
     tamanho(medio),
-    altura_media_maxima_cm('40'),
-    peso_medio_maximo_kg('25'),
-    regiao_origem().
+    altura_media_cm('40'),
+    peso_medio_kg('25'),
+    regiao_origem(nottingham),
+    linhagem_genetica(bulldog, _).
 
 
 cachorro(bull_terrier) :-
@@ -109,12 +116,10 @@ cachorro(bull_terrier) :-
     pelo(bull_terrier),
     corpo(mirrado),
     tamanho(medio),
-    altura_media_maxima_cm('55'),
-    peso_medio_maximo_kg('29'),
-    regiao_origem(birminghan).
-
-
-%--------------------------------------------------Femeas-------------------------------------------
+    altura_media_cm('55'),
+    peso_medio_kg('29'),
+    regiao_origem(birminghan),
+    linhagem_genetica(bull_terrier, _).
 
 %--------------------------------------------------Caracteristicas-----------------------------------
 
@@ -167,15 +172,23 @@ regiao_origem(cordoba):- continente(sul_americano), pais_de_origem(argentina).
 regiao_origem(hamburgo):- continente(europeu), pais_de_origem(alemanha).
 regiao_origem(munique):- continente(europeu), pais_de_origem(alemanha).
 regiao_origem(dublin):- continente(europeu), pais_de_origem(irlanda).
-regiao_origem():- continente(europeu), pais_de_origem(inglaterra).
+regiao_origem(nottingham):- continente(europeu), pais_de_origem(inglaterra).
 regiao_origem(birminghan):- continente(europeu), pais_de_origem(inglaterra).
 
 %-----------------------------------------------Linhagem sanguinea----------------------------------
 
 % O dogo ainda tem muito mais cachorros em sua linhagem porém ficaria muito grande e não saudavel
-linhagem_genetica(dogo) :- 
-    caracteristicas(dogue_alemao),
-    caracteristica(lutador_de_cordoba),
-    caracteristicas(irish_wolfhound),
-    caracteristicas(boxer).
-
+linhagem_genetica(dogo, X):- ancestral(X),
+    member(X, [lutador_de_cordoba, dogue_alemao, boxer, mastim_espanhol, bulldog, bull_terrier, irish_wolfhound, mastim_dos_pirineus, dogue_de_bordeaux]), !.
+linhagem_genetica(dogue_alemao, X):- ancestral(X),
+    member(X, [mastim_ingles, galgo]), !.
+linhagem_genetica(lutador_de_cordoba, X):- ancestral(X),
+    member(X, [mastin, bull_terrier, boxer, e bulldog]), !.
+linhagem_genetica(boxer, X):- ancestral(X),
+    member(X, []), !.
+linhagem_genetica(irish_wolfhound, X):- ancestral(X),
+    member(X, []), !.
+linhagem_genetica(bulldog, X):- ancestral(X),
+    member(X, []), !.
+linhagem_genetica(bull_terrier, X):- ancestral(X),
+    member(X, []), !.

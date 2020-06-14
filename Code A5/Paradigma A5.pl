@@ -4,6 +4,7 @@ expectativa_maxima_de_anos_de_vida(_).
 caracteristicas_corporal_incomum(_).
 cor_dos_olhos(_).
 continente(_).
+pais_de_origem(_).
 pelagem(_).
 cor_do_pelo(_).
 corpo(_).
@@ -17,7 +18,7 @@ cachorro(dogo) :-
     proficiencias(dogo),
     caracteristicas(dogo),
     expectativa_maxima_de_anos_de_vida('12'),
-    pais_de_origem(argentina),
+    regiao_origem(cordoba),
     caracteristicas_corporal_incomum(mancha_no_olho),
     cor_dos_olhos(preto),
     pelagem(curto),
@@ -39,7 +40,7 @@ cachorro(dogue_alemao) :-
     tamanho(grande),
     altura_media_maxima_cm('79'),
     peso_medio_maximo_kg('82'),
-    pais_de_origem(alemanha).
+    regiao_origem(hamburgo).
 
 cachorro(lutador_de_cordoba) :-
     proficiencias(lutador_de_cordoba),
@@ -53,7 +54,7 @@ cachorro(lutador_de_cordoba) :-
     tamanho(grande),
     altura_media_maxima_cm('61'),
     peso_medio_maximo_kg('36'),
-    pais_de_origem(argentina).
+    regiao_origem(cordoba).
 
 cachorro(boxer) :-
     proficiencias(boxer),
@@ -67,7 +68,7 @@ cachorro(boxer) :-
     tamanho(grande),
     altura_media_maxima_cm('62'),
     peso_medio_maximo_kg('35'),
-    pais_de_origem(alemanha).
+    regiao_origem(munique).
 
 cachorro(irish_wolfhound) :-
     proficiencias(irish_wolfhound),
@@ -81,21 +82,21 @@ cachorro(irish_wolfhound) :-
     tamanho(grande),
     altura_media_maxima_cm('203'),
     peso_medio_maximo_kg('82'),
-    pais_de_origem(irlanda).
+    regiao_origem(dublin).
 
-cachorro(buldogue) :-
+cachorro(bulldog) :-
     proficiencia(caçador),
     expectativa_maxima_de_anos_de_vida('12'),
-    caracteristicas(buldogue),
+    caracteristicas(bulldog),
     caracteristicas_corporal_incomum(_),
     cor_dos_olhos(preto),
     pelagem(curto),
-    pelo(buldogue),
+    pelo(bulldog),
     corpo(igual_o_pug),
     tamanho(medio),
     altura_media_maxima_cm('40'),
     peso_medio_maximo_kg('25'),
-    pais_de_origem(inglaterra).
+    regiao_origem().
 
 
 cachorro(bull_terrier) :-
@@ -110,7 +111,7 @@ cachorro(bull_terrier) :-
     tamanho(medio),
     altura_media_maxima_cm('55'),
     peso_medio_maximo_kg('29'),
-    pais_de_origem(inglaterra).
+    regiao_origem(birminghan).
 
 
 %--------------------------------------------------Femeas-------------------------------------------
@@ -125,7 +126,7 @@ caracteristicas(boxer) :- caracteristica(X),
     member(X, [dedicado, destemido, brincalhao, inteligente, fiel, confiante, alegre, brilhante, bravo, energetico, amigavel, calmo]), !.
 caracteristicas(irish_wolfhound) :- caracteristica(X),
     member(X, [pensativo, dignificado, generoso, paciente, fiel, doce]), !.
-caracteristicas(buldogue) :- caracteristica(X),
+caracteristicas(bulldog) :- caracteristica(X),
     member(X, [afetuoso, protetor, brincalhao, amigavel]), !.
 caracteristicas(bull_terrier) :- caracteristica(X),
     member(X, [protetor, ativo, afiado, treinavel]), !.
@@ -139,7 +140,7 @@ proficiencias(dogue_alemao) :- proficiencia(X),
 proficiencias(lutador_de_cordoba) :- proficiencia(X),
     member(X, [guarda, caçador]), !.
 proficiencias(boxer) :- proficiencia(X),
-    member(X, [guarda, guia, caçador]), !.
+    member(X, [guarda, guia, caçador, policial]), !.
 proficiencias(irish_wolfhound) :- proficiencia(X),
     member(X, [guarda, caçador]), !.
 proficiencias(bull_terrier) :- proficiencia(X),
@@ -155,22 +156,24 @@ pelo(boxer) :- cor_do_pelo(X),
     member(X, [tigrado, dourado, branco]), !.
 pelo(irish_wolfhound) :- cor_do_pelo(X),
     member(X, [cinza, tigrado, preto, branco, castanha_e_trigo]), !.
-pelo(buldogue) :- cor_do_pelo(X),
+pelo(bulldog) :- cor_do_pelo(X),
     member(X, [caramelo, tigrado, fulvo, branco, malhado]), !.
 pelo(bull_terrier) :- cor_do_pelo(X),
     member(X, [branco, preto, marron]), !.
 
-%-------------------------------------------------Continente----------------------------------------
+%-----------------------------------------------Continente----------------------------------------
 
-pais_de_origem(alemanha):- continente(europeu).
-pais_de_origem(argentina):- continente(sul_americano).
-pais_de_origem(irlanda):- continente(europeu).
-pais_de_origem(inglaterra):- continente(europeu).
+regiao_origem(cordoba):- continente(sul_americano), pais_de_origem(argentina).
+regiao_origem(hamburgo):- continente(europeu), pais_de_origem(alemanha).
+regiao_origem(munique):- continente(europeu), pais_de_origem(alemanha).
+regiao_origem(dublin):- continente(europeu), pais_de_origem(irlanda).
+regiao_origem():- continente(europeu), pais_de_origem(inglaterra).
+regiao_origem(birminghan):- continente(europeu), pais_de_origem(inglaterra).
 
 %-----------------------------------------------Linhagem sanguinea----------------------------------
 
 % O dogo ainda tem muito mais cachorros em sua linhagem porém ficaria muito grande e não saudavel
-linhagem_sanguinea(dogo) :- 
+linhagem_genetica(dogo) :- 
     caracteristicas(dogue_alemao),
     caracteristica(lutador_de_cordoba),
     caracteristicas(irish_wolfhound),
